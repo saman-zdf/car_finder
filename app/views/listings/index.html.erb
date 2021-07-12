@@ -30,7 +30,7 @@
         <td><%= listing.car_type %></td>
         <td><%= listing.picture %></td>
         <td><%= listing.buyer_id %></td>
-        <td><%= listing.seller_id %></td>
+        <td><%= listing.seller.user_name %></td>
         <td><%= listing.profile_id %></td>
         <td><%= link_to 'Show', listing %></td>
         <td><%= link_to 'Edit', edit_listing_path(listing) %></td>

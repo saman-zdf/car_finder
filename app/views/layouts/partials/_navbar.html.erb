@@ -8,8 +8,12 @@
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
       </ul>
       <ul class="navbar-nav float-right mb-2 mb-lg-0">
-        <li><a href="" class="nav-link btn btn-success text-white">Sell my car</a></li>
-        <li><a href="" class="nav-link">Listing</a></li>
+        <%= link_to "sell my car", new_listing_path, class: "nav-link btn btn-success active text-white"%>
+        <% if user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, class: "nav-link",  method: :delete %>
+        <% else %>
+          <%= link_to "Log in", new_user_session_path, class: "nav-link"  %>
+        <% end %>
       </ul>
     </div>
   </div>
