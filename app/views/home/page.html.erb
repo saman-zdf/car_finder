@@ -2,5 +2,27 @@
   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
   <button class="btn btn-outline-success" type="submit">Search</button>
 </form>
+<div class="row mt-5">
+  <% @listings.each do |car| %>
+    <div class="col-md-4">
+      <div class="card">
+      <%# cheack if an image exit for the listing %>
+      <% if car.pictures && car.pictures.first %>
+        <%= image_tag car.pictures.first, class: "card-image-top car-img" %>
+      <% else %>
+      <%# add a place holder image %>
+      <%= image_tag "car.jpg", class: "card-image-top car-img" %>
 
-<%= image_tag "car.jpg", class: "index-image" %>
+      <% end %>
+        <div class="card-body">
+          <p class="card-text">
+            <%= car.title %>
+          </p>
+          <p>$ <%= car.price %></p>
+          <%= link_to "Explore", listings_path(car.id), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+</div>
