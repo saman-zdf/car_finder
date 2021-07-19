@@ -8,7 +8,7 @@
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :fuel_type %>
-    <%= f.input :make %>
+    <%= f.input :make, :start_year => 1960, :end_year => 2021 %>
     <%= f.input :car_type %>
     <%= f.file_field :pictures, multiple: true %>
   </div>
